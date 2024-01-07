@@ -15,12 +15,14 @@
 <body class="bg-gray-100">
     <header class="p-5 border-b bg-white shadow" id="header">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-black">SaludPlus</h1>
+            <a href="{{route('principal')}}">
+                <h1 class="text-3xl font-black">SaludPlus</h1>
+            </a>
             <nav class="flex gap-4 items-center">
                 <a class="font-bold uppercase text-gray-600 text-sm hover:underline" href="#">
                     Login
                 </a>
-                <a class="font-bold uppercase text-gray-600 text-sm hover:underline" href="{{route('crear-cuenta')}}">
+                <a class="font-bold uppercase text-gray-600 text-sm hover:underline" href="{{route('register')}}">
                     Crear Cuenta
                 </a>
             </nav>
