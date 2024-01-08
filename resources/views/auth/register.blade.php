@@ -32,11 +32,11 @@
                     <label for="apellido" class="mb-2 block uppercase text-gray-600 font-bold">
                         Apellido
                     </label>
-                    <input type="text" placeholder="Apellido" id="apellido" name="apellido"
+                    <input type="text" placeholder="Apellido" id="apellido" name="lastname"
                         class="border p-3 w-full rounded-lg  @error('apellido')
                         border-red-500
                         @enderror"
-                        value="{{ old('apellido') }}">
+                        value="{{ old('lastname') }}">
                     @error('apellido')
                         <p class="bg-red-600 text-white uppercase p-3 rounded-lg text-center mt-2 text-sm">
                             {{ $message }}
@@ -47,10 +47,12 @@
                     <label for="telefono" class="mb-2 block uppercase text-gray-600 font-bold">
                         Telefono
                     </label>
-                    <input type="number" placeholder="Telefono" id="telefono" name="telefono"
+                    <input type="number" placeholder="Telefono" id="telefono" name="phone"
                         class="border p-3 w-full rounded-lg  @error('name')
                         border-red-500
-                    @enderror">
+                    @enderror"
+                    value="{{ old('phone') }}"
+                    >
                     @error('telefono')
                         <p class="bg-red-600 text-white uppercase p-3 rounded-lg text-center mt-2 text-sm">
                             {{ $message }}
@@ -64,7 +66,10 @@
                     <input type="email" placeholder="Email" id="email" name="email"
                         class="border p-3 w-full rounded-lg  @error('email')
                         border-red-500
-                    @enderror">
+                    @enderror"
+                    value="{{ old('email') }}"
+                    
+                    >
                     @error('email')
                         <p class="bg-red-600 text-white uppercase p-3 rounded-lg text-center mt-2 text-sm">
                             {{ $message }}
@@ -89,10 +94,7 @@
                     <label for="password_confirmation" class="mb-2 block uppercase text-gray-600 font-bold ">
                         Repetir Password
                     </label>
-                    <input 
-                    type="password"
-                     placeholder="Repite tu password" 
-                     id="password_confirmation"
+                    <input type="password" placeholder="Repite tu password" id="password_confirmation"
                         name="password_confirmation"
                         class="border p-3 w-full rounded-lg @error('password_confirmation')
                         border-red-500
