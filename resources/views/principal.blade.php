@@ -15,7 +15,7 @@ Inicio
 
         <p class=" text-white text-xl">Nuestro servicio está disponible en la ciudad de Quito.</p>
         <p class=" text-white text-xl">Para agendar una cita deber crear una cuenta!</p>
-        <a href="http://localhost/in" class="bg-green-600 text-white font-semibold py-2 px-4 rounded inline-block mt-2 hover:bg-green-700 uppercase">Crear cuenta</a>
+        <a href="{{ route('register') }}" class="bg-green-600 text-white font-semibold py-2 px-4 rounded inline-block mt-2 hover:bg-green-700 uppercase">Crear cuenta</a>
     </div>
 
 </div>
