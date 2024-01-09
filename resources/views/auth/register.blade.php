@@ -33,11 +33,11 @@
                         Apellido
                     </label>
                     <input type="text" placeholder="Apellido" id="apellido" name="lastname"
-                        class="border p-3 w-full rounded-lg  @error('apellido')
+                        class="border p-3 w-full rounded-lg  @error('lastname')
                         border-red-500
                         @enderror"
                         value="{{ old('lastname') }}">
-                    @error('apellido')
+                    @error('lastname')
                         <p class="bg-red-600 text-white uppercase p-3 rounded-lg text-center mt-2 text-sm">
                             {{ $message }}
                         </p>
@@ -48,12 +48,12 @@
                         Telefono
                     </label>
                     <input type="number" placeholder="Telefono" id="telefono" name="phone"
-                        class="border p-3 w-full rounded-lg  @error('name')
+                        class="border p-3 w-full rounded-lg  @error('phone')
                         border-red-500
                     @enderror"
                     value="{{ old('phone') }}"
                     >
-                    @error('telefono')
+                    @error('phone')
                         <p class="bg-red-600 text-white uppercase p-3 rounded-lg text-center mt-2 text-sm">
                             {{ $message }}
                         </p>
@@ -68,7 +68,7 @@
                         border-red-500
                     @enderror"
                     value="{{ old('email') }}"
-                    
+
                     >
                     @error('email')
                         <p class="bg-red-600 text-white uppercase p-3 rounded-lg text-center mt-2 text-sm">
