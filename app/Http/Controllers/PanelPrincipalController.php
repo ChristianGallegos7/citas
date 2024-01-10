@@ -6,12 +6,19 @@ use Illuminate\Http\Request;
 
 class PanelPrincipalController extends Controller
 {
+    //middleware 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        // dd(auth()->user());
+        return view('panel.dashboard');
     }
 
     /**

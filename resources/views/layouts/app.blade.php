@@ -19,7 +19,7 @@
                 <h1 class="text-3xl font-black">SaludPlus</h1>
             </a>
             <nav class="flex gap-4 items-center">
-                <a class="font-bold uppercase text-gray-600 text-sm hover:underline" href="#">
+                <a class="font-bold uppercase text-gray-600 text-sm hover:underline" href="{{ route('login') }}">
                     Login
                 </a>
                 <a class="font-bold uppercase text-gray-600 text-sm hover:underline" href="{{route('register')}}">

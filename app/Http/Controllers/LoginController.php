@@ -11,7 +11,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
+        return view('auth.login');
     }
 
     /**
@@ -27,7 +27,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd('loguendo');
     }
 
     /**
