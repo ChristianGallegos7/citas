@@ -12,8 +12,12 @@
         <div class="md:w-4/12 bg-white rounded-lg shadow-2xl p-6">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
-               
-                <div class="mb-5">
+                @if (session('mensaje'))
+                <p class="bg-red-600 text-white uppercase p-3 rounded-lg text-center mt-2 text-sm">
+                            {{ session('mensaje') }}
+                        </p>
+                @endif
+                <div class="mb-5 mt-2">
                     <label for="email" class="mb-2 block uppercase text-gray-600 font-bold">
                         E-mail
                     </label>
@@ -44,7 +48,7 @@
                         </p>
                     @enderror
                 </div>
-              
+
                 <input type="submit" value="Iniciar Sesión"
                     class="bg-green-600 hover:bg-green-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
             </form>
