@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class PanelPrincipalController extends Controller
 {
-    //middleware 
+    //middleware para que no se pueda acceder a rutas si no estas autenticado
+    
     public function __construct()
     {
         $this->middleware('auth');

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\PanelPrincipalController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,7 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register')
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store'])->name('login');
+Route::post('logout', [LogOutController::class, 'store'])->name('logout');
 
 
 Route::get('/panel-citas', [PanelPrincipalController::class, 'index'])->name('panel.index');
