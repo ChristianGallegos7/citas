@@ -19,7 +19,7 @@ class PanelPrincipalController extends Controller
     public function index()
     {
         // dd(auth()->user());
-        return view('panel.dashboard');
+        return view('patient.dashboard');
     }
 
     /**

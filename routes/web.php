@@ -17,5 +17,5 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store'])->name('login');
 Route::post('logout', [LogOutController::class, 'store'])->name('logout');
 
-
-Route::get('/panel-citas', [PanelPrincipalController::class, 'index'])->name('panel.index');
+//VISTAS PARA LOS USUARIOS
+Route::get('/panel-citas', [PanelPrincipalController::class, 'index'])->name('patient.dashboard');

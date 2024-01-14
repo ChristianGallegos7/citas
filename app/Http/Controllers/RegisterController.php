@@ -44,14 +44,15 @@ class RegisterController extends Controller
             'lastname' => $request->lastname,
             'phone' => $request->phone,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'role' => 'patient'
         ]);
 
         //forma mas corta de autenticar 
         auth()->attempt($request->only('email', 'password'));
 
         //redireccionar al usuario
-        return redirect()->route('panel.index');
+        return redirect()->route('patient.dashboard');
     }
 
     /**
