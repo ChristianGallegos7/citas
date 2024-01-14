@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\PanelPrincipalController;
@@ -19,3 +21,11 @@ Route::post('logout', [LogOutController::class, 'store'])->name('logout');
 
 //VISTAS PARA LOS USUARIOS
 Route::get('/panel-citas', [PanelPrincipalController::class, 'index'])->name('patient.dashboard');
+
+
+//VISTAS PARA LOS ADMIN
+Route::get('/panel-admin', [AdminController::class, 'index'])->name('admin.dashboard');
+
+
+//VISTAS PARA LOS DOCTORES
+Route::get('/panel-doctores', [DoctorController::class, 'index'])->name('doctor.dashboard');

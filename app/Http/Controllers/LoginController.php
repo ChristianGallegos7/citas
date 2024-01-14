@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -27,17 +28,31 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //validar los datos
+        // Validar los datos
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        if(!auth()->attempt($request->only('email', 'password'), $request->remember)){
+        // Intentar autenticar al usuario
+        if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with('mensaje', 'Credenciales incorrectas');
         }
 
-        return redirect()->route('panel.index');
+        // Obtener el usuario autenticado
+        $user = auth()->user();
+
+        // Redireccionar según el rol
+        if ($user->isAdmin()) {
+            return redirect()->route('admin.dashboard');
+        } elseif ($user->isDoctor()) {
+            return redirect()->route('doctor.dashboard');
+        } elseif ($user->isPatient()) {
+            return redirect()->route('patient.dashboard');
+        } else {
+            // Redirección por defecto si el usuario no tiene un rol reconocido
+            return redirect()->route('principal');
+        }
     }
 
     /**
