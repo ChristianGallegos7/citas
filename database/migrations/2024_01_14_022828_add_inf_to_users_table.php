@@ -26,7 +26,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('lastname');
             $table->dropColumn('phone');
-            $table->dropColumn('role');
+            $table->dropColumn('role')->default('patient');
         });
     }
 };

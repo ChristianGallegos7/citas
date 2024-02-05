@@ -8,7 +8,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('favicon.svg') }}" type="image/x-icon">
+
     @vite('resources/css/app.css')
 </head>
 
@@ -20,10 +21,23 @@
             </a>
             @auth
                 <nav class="flex gap-4 items-center">
-                    <a class="font-bold uppercase text-gray-600 text-sm hover:underline" href="{{ route('login') }}">
+                    <a class="font-bold uppercase text-gray-600 text-sm " href="#">
                         Hola: <span class="font-normal">
                             {{ auth()->user()->name }}
                         </span>
+                        <!-- Mostrar pestañas específicas para el rol de administrador -->
+                        @if (auth()->user()->isAdmin())
+                            <a class="font-bold uppercase text-white text-sm bg-green-500 p-2 rounded-lg hover:bg-green-600 hover:no-underline"
+                                href="{{ route('admin.appointments') }}">
+                                Citas Médicas
+                            </a>
+
+                            <a class="font-bold uppercase text-white bg-yellow-500 text-sm p-2 rounded-lg hover:bg-yellow-600"
+                                href="{{ route('admin.doctors') }}">
+                                Doctores
+                            </a>
+                           
+                        @endif
                     </a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -59,6 +73,8 @@
         SaludPlus - &copy;Todos los derechos Reservados
         {{ now()->year }}
     </footer>
+
+    <script src="{{ asset('app.js') }}"></script>
 
 </body>
 
